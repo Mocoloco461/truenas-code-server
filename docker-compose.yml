@@ -1,0 +1,16 @@
+services:
+  code-server:
+    image: lscr.io/linuxserver/code-server:latest
+    container_name: code-server
+    environment:
+      - PUID=${PUID:-950}
+      - PGID=${PGID:-950}
+      - TZ=${TZ:-Asia/Jerusalem}
+    volumes:
+      - ./config:/config
+      - /mnt/Ochayon_Home_Data/apps/immich:/immich
+      - /mnt/Ochayon_Home_Data/apps/code-server:/code-server
+      - /mnt/Ochayon_Home_Data/apps/traefik-truenas:/traefik-truenas
+    ports:
+      - 8443:8443
+    restart: unless-stopped
