@@ -11,6 +11,11 @@ services:
       - /mnt/Ochayon_Home_Data/apps/immich:/immich
       - /mnt/Ochayon_Home_Data/apps/code-server:/code-server
       - /mnt/Ochayon_Home_Data/apps/traefik-truenas:/traefik-truenas
+      - /mnt/Ochayon_Home_Data/apps/dolev:/dolev
+      - /mnt/Ochayon_Home_Data/apps/idrac-monitoring:/idrac-monitoring
+      - /mnt/Ochayon_Home_Data/apps/truenas-minio:/truenas-minio
+      - /mnt/Ochayon_Home_Data/apps/n8n-whatsapp:/n8n-whatsapp
+      # - /mnt/Ochayon_Home_Data/apps/{}:/{}
     ports:
       - 8443:8443
     restart: unless-stopped
